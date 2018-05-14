@@ -1,10 +1,9 @@
 const electron = require('electron')
-// Module to control application life.
-const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
+require('update-electron-app')()
 
-const { autoUpdater, dialog } = require('electron')
+const { app, autoUpdater, dialog } = require('electron')
 
 
 
@@ -15,7 +14,7 @@ const url = require('url')
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
-require('update-electron-app')()
+
 
 const server = 'https://hazel-server-rlwssvwkwd.now.sh'
   const feed = `${server}/update/${process.platform}/${app.getVersion()}`
